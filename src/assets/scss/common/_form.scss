@@ -1,0 +1,191 @@
+@use '../settings' as *;
+
+body {
+  // checkbox
+  .v-checkbox.v-input {
+    display: inline-block;
+    @extend .text_16;
+    .v-selection-control {
+      min-height: inherit;
+      align-items: flex-start;
+      .v-icon {
+        background-image: url('@/assets/images/icon/icon_checkbox_off.svg');
+        svg {
+          display: none;
+        }
+      }
+      // disabled
+      &.v-selection-control--disabled {
+        opacity: 1;
+        .v-icon {
+          background-image: url('@/assets/images/icon/icon_checkbox_disabled_off.svg');
+        }
+      }
+      // checked
+      &.v-selection-control--dirty {
+        .v-icon {
+          background-image: url('@/assets/images/icon/icon_checkbox_on.svg');
+        }
+        // disabled
+        &.v-selection-control--disabled {
+          .v-icon {
+            background-image: url('@/assets/images/icon/icon_checkbox_disabled_on.svg');
+          }
+        }
+      }
+      .v-selection-control__wrapper {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+      .v-label {
+        min-height: 2.4rem;
+        padding-left: .8rem;
+        padding-top: .2rem;
+        font-size: inherit;
+        opacity: 1;
+      }
+    }
+    &.small {
+      .v-selection-control {
+        .v-icon {
+          background-image: url('@/assets/images/icon/icon_checkbox_sm_off.svg');
+        }
+        // checked
+        &.v-selection-control--dirty {
+          .v-icon {
+            background-image: url('@/assets/images/icon/icon_checkbox_sm_on.svg');
+          }
+        }
+        &.v-selection-control--disabled {
+          opacity: 0.5;
+        }
+      }
+      .v-label {
+        padding-left: .4rem;
+      }
+    } 
+  }
+  // switch
+  .v-switch.v-input {
+    display: inline-block;
+    .v-selection-control {
+      min-height: initial;
+      flex-flow: row-reverse;
+      .v-selection-control__wrapper {
+        height: initial;
+        .v-switch__track {
+          width: 4.8rem;
+          min-width: initial;
+          height: 2.4rem;
+          opacity: 1;
+          background-color: $gray-030;
+          border: 1px solid $gray-040;
+        }
+        .v-selection-control__input {
+          transform: translateX(-1.2rem) !important;
+        }
+        .v-switch__thumb {
+          width: 2rem;
+          height: 2rem;
+          transform: scale(1);
+        }
+      }
+      .v-label {
+        @extend .text_16;
+        height: initial;
+        padding: 0 0.8rem;
+        color: $black;
+        opacity: 1;
+      }
+      // 선택
+      &.v-selection-control--dirty {
+        .v-switch__track {
+          border: 1px solid $blue-500;
+          background-color: $primary;
+        }
+        .v-selection-control__input {
+          transform: translateX(1.2rem) !important;
+        }
+      }
+    }
+  }
+  // text field
+  .input_item {
+    .v-text-field.v-input {
+      .v-input__control {
+        padding-right: 1.6rem;
+        padding-bottom: 1.2rem;
+        border: 1px solid $gray-030;
+        border-radius: 0.8rem;
+        .v-field {
+          padding: 0;
+          align-items: flex-end;
+          .v-field__clearable {
+            margin-bottom: 0.8rem;
+            .v-icon {
+              width: 2rem;
+              height: 2rem;
+              background-image: url('@/assets/images/icon/icon_20_delete_gray.svg');
+              opacity: 1;
+              .v-icon__svg {
+                display: none;
+              }
+            }
+          }
+          .v-field__append-inner {
+            padding-left: 1.2rem;
+          }
+        }
+        .v-field__outline,
+        .v-field__overlay {
+          display: none;
+        }
+        .v-field__field {
+          flex-direction: column;
+          .v-label.v-field-label {
+            &+.v-label {
+              display: none !important;
+            }
+          }
+          .v-label.v-field-label {
+            visibility: visible !important;
+            position: relative;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            padding-top: 1.2rem;
+            padding-left: 1.6rem;
+            transform: initial;
+            transition: initial;
+            transform-origin: initial;
+            margin-inline-start: initial;
+            opacity: 1;
+            @extend .text_14;
+          }
+          input {
+            min-height: 3.2rem;
+            margin-top: 0.6rem;
+            margin-bottom: -0.2rem;
+            padding-top: 0;
+            opacity: 1;
+          }
+        }
+      }
+      .v-input__details {
+        padding-left: 0;
+        .v-messages {
+          @extend .text_12;
+          color: $gray-070;
+          opacity: 1;
+        }
+      }
+    }
+  }
+  // input message
+  .input_message {
+    margin-top: 0.6rem;
+    @extend .text_12;
+    color: $gray-070;
+  }
+}

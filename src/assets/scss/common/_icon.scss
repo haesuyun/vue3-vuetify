@@ -1,0 +1,104 @@
+  // icon
+body {
+  .v-icon {
+    // defult size 2.4rem
+    width: 2.4rem;
+    height: 2.4rem;
+    background-size: contain;
+    background-position: center center;
+    background-position: center center;
+    &.v-icon--size-small {
+      width: 1.6rem !important;
+      height: 1.6rem !important;
+      &.close_black {
+        background-image: url('@/assets/images/icon/icon_16_close_black.svg');
+      }
+      &.close_white {
+        background-image: url('@/assets/images/icon/icon_16_close_white.svg');
+      }
+    }
+    &.v-icon--size-large {
+      width: 3.2rem !important;
+      height: 3.2rem !important;
+    }
+    // 16px
+    &.arrow_black {
+      background-image: url('@/assets/images/icon/icon_16_arrow_black.svg');
+    }
+    &.question_gray {
+      background-image: url('@/assets/images/icon/icon_16_question_gray.svg');
+    }
+    // 20px
+    &.info_gray,
+    &.rotate_black,
+    &.open_black,
+    &.delete_gray {
+      width: 2rem;
+      height: 2rem;
+    }
+    &.delete_gray {
+      background-image: url('@/assets/images/icon/icon_20_delete_gray.svg');
+    }
+    &.open_black {
+      background-image: url('@/assets/images/icon/icon_20_open_black.svg');
+    }
+    &.rotate_black {
+      background-image: url('@/assets/images/icon/icon_20_rotate_black.svg');
+    }
+    &.info_gray {
+      background-image: url('@/assets/images/icon/icon_20_info_gray.svg');
+    }
+    // 24px
+    &.export_white {
+      background-image: url('@/assets/images/icon/icon_24_export_white.svg');
+    }
+    &.top_black {
+      background-image: url('@/assets/images/icon/icon_24_top_black.svg');
+    }
+    &.search_white {
+      background-image: url('@/assets/images/icon/icon_24_search_white.svg');
+    }
+    &.heart_white {
+      background-image: url('@/assets/images/icon/icon_24_heart_white.svg');
+    }
+    &.close_black {
+      background-image: url('@/assets/images/icon/icon_24_close_black.svg');
+    }
+    &.family_card_01 {
+      background-image: url('@/assets/images/icon/icon_24_family_card_01.svg');
+    }
+    &.family_card_02 {
+      background-image: url('@/assets/images/icon/icon_24_family_card_02.svg');
+    }
+    &.family_card_03 {
+      background-image: url('@/assets/images/icon/icon_24_family_card_03.svg');
+    }
+    &.family_card_04 {
+      background-image: url('@/assets/images/icon/icon_24_family_card_04.svg');
+    }
+    &.back_black {
+      background-image: url('@/assets/images/icon/icon_24_back_black.svg');
+    }
+    &.checked_blue {
+      background-image: url('@/assets/images/icon/icon_checkbox_sm_on.svg');
+    }
+    &.mastercard {
+      width: 3.2rem;
+      height: 2rem;
+      background-image: url('@/assets/images/icon/icon_32_20_mastercard.svg');
+    }
+    &.plus_black {
+      width: 2.8rem;
+      height: 2.8rem;
+      background-image: url('@/assets/images/icon/icon_28_plus_black.svg');
+    }
+    &.n_pay {
+      width: 7.5rem;
+      background-image: url('@/assets/images/logo_n_pay.svg');
+    }
+    &.kakao_pay {
+      width: 7.5rem;
+      background-image: url('@/assets/images/logo_kakao_pay.svg');
+    }
+  }
+}

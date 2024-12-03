@@ -1,0 +1,175 @@
+@use '../settings' as *;
+
+body {
+  // btn
+  .v-btn {
+    letter-spacing: -0.01em;
+    &.v-btn--size-x-small,
+    &.v-btn--size-small,
+    &.v-btn--size-default,
+    &.v-btn--size-large,
+    &.v-btn--size-x-large {
+      &,
+      &:hover,
+      &:focus {
+        box-shadow: none;
+      }
+      &.v-btn--variant-outlined {
+        .v-btn__overlay {
+          display: none;
+        }
+      }
+      &.rounded-xs {
+        border-radius: .2rem !important;
+      }
+    }
+    &.v-btn--size-small,
+    &.v-btn--size-default,
+    &.v-btn--size-large,
+    &.v-btn--size-x-large {
+      border-radius: .8rem !important;
+    }
+    &.v-btn--size-x-small {
+      @extend .button_14;
+      height: 3.6rem !important;
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+      border-radius: .6rem !important;
+      &.rounded-xl {
+        border-radius: 1.8rem !important;
+      }
+    }
+    &.v-btn--size-small {
+      @extend .button_14;
+      height: 3.8rem !important;
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+    }
+    &.v-btn--size-default:not(.v-btn--variant-text) {
+      @extend .button_14;
+      height: 4.8rem !important;
+    }
+    &.v-btn--size-large {
+      @extend .button_16;
+      height: 4.8rem !important;
+      @media (min-width: 1100px) {
+        height: 5.6rem !important;
+      }
+      &.v-btn--icon {
+        min-width: 4.8rem !important;
+        width: 4.8rem;
+      }
+    }
+    &.v-btn--size-x-large {
+      height: 5.4rem !important;
+      &.v-btn--icon {
+        width: 5.4rem;
+        border-radius: 50% !important;
+      }
+    }
+    &.v-btn--variant-text {
+      min-width: inherit;
+      height: inherit;
+      padding: 0;
+      line-height: 1.2em;
+      border-radius: 0 !important;
+      &.underline {
+        border-bottom: .1rem solid $black;
+      }
+      .v-ripple__container,
+      .v-btn__overlay {
+        display: none;
+      }
+    }
+    &.bg-primary {
+      &.v-btn--disabled {
+        color: $text-steel-blue !important;
+        background-color: $bg-steel-blue !important;
+      }
+    }
+    &.bg-secondary {
+      color: $dark-gray-500 !important;
+      &.v-btn--disabled {
+        color: $dark-gray-300 !important;
+        background-color: $dark-gray-100 !important;
+      }
+    }
+    &.bg-tertiary {
+      color: $white;
+      &.v-btn--disabled {
+        color: $gray-060;
+        background-color: $dark-gray-500;
+      }
+    }
+    &.bg-white {
+      &.v-btn--disabled {
+        color: $gray-050 !important;
+      }
+    }
+    &.text-black.v-btn--variant-outlined {
+      border-color: $gray-050;
+      &.v-btn--disabled {
+        color: $gray-050;
+        border-color: $gray-040;
+      }
+    }
+    &.v-btn--disabled {
+      .v-btn__overlay {
+        display: none;
+      }
+    }
+  }
+  .v-btn.v-btn--size-x-small.flip_btn {
+    height: 3.2rem !important;
+    padding: 0 1.2rem;
+    background: $white;
+    .v-icon {
+      margin-right: .4rem;
+    }
+    @extend .button_14;
+  }
+  // btn group
+  .v-btn-group {
+    &.regular,
+    &.large {
+      overflow: inherit;
+      width: 100%;
+      height: inherit;
+      margin: 1.6rem 0;
+      border-radius: 0;
+      .v-btn {
+        flex: 1 1 auto;
+        min-width: 30%;
+        &+.v-btn {
+          margin-left: .8rem;
+        }
+        &.v-btn--icon {
+          flex: 0 0 auto;
+        }
+      }
+    }
+    &.regular {
+      justify-content: center;
+      .v-btn {
+        max-width: 40rem;
+      }
+    }
+    &.x-large {
+      height: 5.4rem;
+      border-radius: 2.7rem;
+      .v-btn--icon {
+        border-radius: 0 !important;
+        &+.v-btn--icon::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 1px;
+          height: 1.6rem;
+          top: 50%;
+          margin-top: -.8rem;
+          background-color: $dark-gray-500;
+        }
+      }
+    }
+  }
+}

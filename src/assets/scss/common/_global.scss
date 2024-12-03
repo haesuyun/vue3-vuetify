@@ -1,0 +1,137 @@
+@use '../settings' as *;
+
+html {
+  font-size: 62.5% !important;
+}
+body {
+  font-family: 'SpoqaHanSansNeo','sans-serif';
+  font-size: 1.6rem;
+  letter-spacing: -0.01em;
+}
+body {
+  a,
+  button {
+    display: inline-block;
+    font-size: 0;
+    vertical-align: middle;
+  }
+  // container
+  .v-row {
+    margin: 0;
+  }
+  .v-container,
+  .v-col {
+    padding: 0;
+  }
+  .v-tabs {
+    max-width: 36rem;
+    height: inherit;
+    .v-slide-group__prev,
+    .v-slide-group__next {
+      display: none;
+    }
+    .v-tab {
+      min-width: 7.4rem;
+      height: 4.2rem !important;
+      padding: 0 1.2rem;
+      &.v-btn {
+        min-width: auto;
+      }
+      &.title_18 {
+        font-weight: 400;
+      }
+      &--selected {
+        &.title_18 {
+          font-weight: 700;
+        }
+      }
+      .v-btn__content {
+        position: relative;
+        width: 100%;
+        height: 100%;
+      }
+      &__slider {
+        width: 100%;
+      }
+    }
+    &.underline {
+      border-bottom: 0.1rem solid $gray-030;
+    }
+  }
+
+  .v-divider {
+    opacity: 1;
+    border-color: $gray-030;
+    border-top-width: 0.1rem;
+    &.v-theme {
+      &--dashed {
+        border-top-style: dotted;
+      }
+      &--large {
+        border-top-width: 1.2rem;
+      }
+    }
+    &--vertical {
+      height: 3rem;
+    }
+  }
+  .v-snackbar {
+    &__wrapper {
+      bottom: 7.2rem;
+      max-width: 28rem;
+      border-radius: 1rem;
+      box-shadow: 0 0.8rem 1.6rem 0 rgba($black, 0.4);
+      background-color: rgba($dark-gray-800, 0.8);
+    }
+    &__content {
+      padding: 1rem 1.6rem 0.8rem;
+      text-align: center;
+    }
+  }
+  // tooltip_box
+  .show_screen {
+    .tooltip_box {
+      position: absolute;
+      transition: all 0.5s ease-in;
+      transform: translate(-50%, 0);
+      opacity: 0;
+      z-index: -1;
+    }
+    &.on .tooltip_box {
+      transform: translate(-50%, -100%) !important;
+      z-index: 100;
+      opacity: 1;
+    }
+  }
+    
+  // list
+  .dot_list {
+    li {
+      position: relative;
+      padding-left: .8rem;
+      list-style: none;
+      @extend .text_16;
+      &:before {
+        content: '';
+        position: absolute;
+        top: .8rem;
+        left: 0;
+        width: .3rem;
+        height: .3rem;
+        background-color: $black;
+        border-radius: 100%;
+      }
+    }
+    &>li+li {
+      margin-top: .8rem;
+    }
+    &.small {
+      li {
+        @extend .text_12;
+      }
+      &>li+li {
+        margin-top: .4rem;
+      }
+    }
+  }
+}

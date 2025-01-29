@@ -85,8 +85,8 @@ onMounted(()=>{
     </BottomSheetSection>
   </v-menu> -->
   <!-- mobile -->
+  <!-- v-if="isMobile" -->
   <SelectItem 
-    v-if="isMobile"
     :value="optionValue"
     @update:modelValue="optionValue = $event"
     :options="options"
@@ -94,11 +94,11 @@ onMounted(()=>{
     :text="options[optionValue].text" 
   ></SelectItem>
   <!-- pc -->
+  <!-- v-else -->
   <v-bottom-sheet
-    v-else
-    v-model="sheet"
+  v-model="sheet"
   >
-    <template v-slot:activator="{ props }">
+  <template v-slot:activator="{ props }">
       <SelectItem v-bind="props" :label="label" :text="options[optionValue].text"></SelectItem>
     </template>
     <BottomSheetSection 
@@ -119,6 +119,7 @@ onMounted(()=>{
       </v-list>
     </BottomSheetSection>
   </v-bottom-sheet>
+  <v-btn href="#">last link</v-btn>
 </template>
 <style lang="scss" scoped>
 @use '@/assets/scss/settings' as *;

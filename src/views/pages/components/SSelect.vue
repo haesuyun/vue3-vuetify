@@ -33,14 +33,15 @@ const optionValue = computed({
 });
 const menuRef = ref(null);
 function clickOption(val){
-  if(val){
+  if(val !== null){
     optionValue.value = val
   }
   sheet.value = false
   sheet01.value = false
-  const menuEl = menuRef.value.$el;
-  console.log(menuEl.nextElementSibling)
-  menuEl.nextElementSibling.querySelector('.v-btn').focus()
+  // console.log('menuRef',menuRef)
+  // const menuEl = menuRef.value.$el;
+  // console.log(menuEl.nextElementSibling)
+  // menuEl.nextElementSibling.querySelector('.v-btn').focus()
 }
 const selectRef = ref(null)
 onMounted(()=>{
@@ -49,8 +50,8 @@ onMounted(()=>{
   }else{
     isMobile.value = false;
   }
-  console.log(selectRef.value.querySelector('.v-btn'))
-  selectRef.value.querySelector('.v-btn').focus()
+  // console.log(selectRef.value.querySelector('.v-btn'))
+  // selectRef.value.querySelector('.v-btn').focus()
 })
 
 </script>
